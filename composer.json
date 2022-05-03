@@ -1,0 +1,56 @@
+{
+    "name": "peon/php-recipes",
+    "type": "project",
+    "description": "",
+    "authors": [
+        {
+            "name": "Jan Mikeš",
+            "email": "j.mikes@me.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1.0",
+        "rector/rector": "^0.12.23",
+        "symfony/console": "^6.0",
+        "symfony/runtime": "^6.0"
+    },
+    "require-dev": {
+        "ext-simplexml": "*",
+        "phpstan/phpstan": "^1.2",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-symfony": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Peon\\PhpRecipes\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Peon\\PhpRecipes\\Tests\\": "tests"
+        }
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "require": "6.0.*"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}

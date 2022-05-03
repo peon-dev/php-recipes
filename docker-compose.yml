@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+    php:
+        image: peon
+        volumes:
+            - .:/peon
+        working_dir: /peon
+        depends_on:
+            - composer
+
+    # Helper service to keep composer depencencies up to date
+    composer:
+        image: peon
+        build:
+            context: .
+            target: dev
+        volumes:
+            - .:/peon
+        working_dir: /peon
+        entrypoint: "composer"
+        command: [ "install", "--no-interaction" ]

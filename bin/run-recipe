@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+require_once __DIR__ . '/../vendor/autoload_runtime.php';
+
+return static function (Command $command) {
+    $command->setCode(function (InputInterface $input, OutputInterface $output) {
+        $output->write('Hello World');
+    });
+
+    return $command;
+};
