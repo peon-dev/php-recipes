@@ -15,13 +15,15 @@ final class RunRecipe
     ) {}
 
 
-    public function run(string $recipe): void
+    public function run(string $recipe, string $applicationDirectory): void
     {
-        $configuration = new RectorProcessCommandConfiguration();
+        $configuration = new RectorProcessCommandConfiguration(
+            config: __DIR__ . '/../rector-config/' . $recipe . '.php',
+        );
 
         $command = $this->rector->getProcessCommand($configuration);
 
-        $process = Process::fromShellCommandline($command);
+        $process = Process::fromShellCommandline($command, $applicationDirectory);
 
         $process->run(function ($type, $buffer) {
             echo $buffer;
