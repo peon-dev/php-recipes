@@ -2,17 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Peon\Domain\Tools\Rector;
+namespace Peon\PhpRecipes\Rector;
 
-use Peon\Domain\Job\Job;
-use Peon\Domain\Job\Value\JobId;
-use Peon\Domain\Process\Exception\ProcessFailed;
-use Peon\Domain\Process\ExecuteCommand;
-use Peon\Domain\Tools\Rector\Value\RectorProcessCommandConfiguration;
+use Peon\PhpRecipes\Rector\Value\RectorProcessCommandConfiguration;
 
 class Rector
 {
-    public const BINARY_EXECUTABLE = '/peon/vendor-bin/rector/vendor/rector/rector/bin/rector'; // TODO must be dynamic, for non-standard installations
+    public const BINARY_EXECUTABLE = __DIR__ . '/../../vendor/bin/rector';
 
     public function getProcessCommand(RectorProcessCommandConfiguration $configuration): string
     {

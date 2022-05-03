@@ -1,14 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Peon\Tests\Unit\Domain\Tools\Rector;
+namespace Peon\PhpRecipes\Tests;
 
-use Peon\Domain\Job\Value\JobId;
-use Peon\Domain\Process\Exception\ProcessFailed;
-use Peon\Domain\Process\ExecuteCommand;
-use Peon\Domain\Process\Value\ProcessResult;
-use Peon\Domain\Tools\Rector\Rector;
-use Peon\Domain\Tools\Rector\Value\RectorProcessCommandConfiguration;
+use Peon\PhpRecipes\Rector\Rector;
+use Peon\PhpRecipes\Rector\Value\RectorProcessCommandConfiguration;
 use PHPUnit\Framework\TestCase;
 
 class RectorTest extends TestCase

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Peon\Domain\Tools\Rector\Value;
+namespace Peon\PhpRecipes\Rector\Value;
 
 final class RectorProcessCommandConfiguration
 {
