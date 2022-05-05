@@ -42,7 +42,6 @@ RUN install-php-extensions \
     gd \
     geospatial \
     gettext \
-    gmagick \
     gmp \
     gnupg \
     grpc \
