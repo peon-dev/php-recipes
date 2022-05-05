@@ -15,9 +15,13 @@ final class RunRecipe
     ) {}
 
 
-    public function run(string $recipe, string $applicationDirectory): void
+    /**
+     * @param non-empty-array<string> $paths
+     */
+    public function run(string $recipe, string $applicationDirectory, array $paths): void
     {
         $configuration = new RectorProcessCommandConfiguration(
+            $paths,
             config: __DIR__ . '/../rector-config/' . $recipe . '.php',
         );
 

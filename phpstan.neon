@@ -1,7 +1,6 @@
 includes:
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/phpstan/phpstan-phpunit/rules.neon
-    - packages/PHPStan/extension.neon
 
 parameters:
     level: max
@@ -9,15 +8,8 @@ parameters:
         - src
         - bin
         - tests
-        - vendor-bin/rector/config
-    # checkUninitializedProperties: true # TODO: enable later
+    checkUninitializedProperties: true
     excludePaths:
-        - tests/bootstrap.php
-        - tests/object-manager.php
-        - tests/GitRepository/
-    scanDirectories:
-        - var/cache/dev/Symfony/Config
-    bootstrapFiles:
-        - vendor-bin/rector/vendor/autoload.php
-    symfony:
-        container_xml_path: var/cache/dev/Peon_Infrastructure_Symfony_PeonKernelDevDebugContainer.xml
+        - tests/ExampleApplication/
+        - tests/var
+

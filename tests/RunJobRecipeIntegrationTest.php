@@ -24,7 +24,7 @@ class RunJobRecipeIntegrationTest extends TestCase
             new Rector(),
         );
 
-        $runRecipe->run($recipe->value, $testingApplication->directory);
+        $runRecipe->run($recipe->value, $testingApplication->directory, ['src']);
 
         $expectationFileContent = FileSystem::read(__DIR__ . '/RecipesExpectedChanges/' . $recipe->value . '.xml');
 

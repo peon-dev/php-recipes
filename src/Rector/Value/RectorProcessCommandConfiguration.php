@@ -7,12 +7,11 @@ namespace Peon\PhpRecipes\Rector\Value;
 final class RectorProcessCommandConfiguration
 {
     /**
-     * @param null|array<string> $paths
+     * @param non-empty-array<string> $paths
      */
     public function __construct(
+        public readonly array $paths,
         public readonly string|null $autoloadFile = null,
-        public readonly string|null $workingDirectory = null,
         public readonly string|null $config = null,
-        public readonly array|null $paths = null,
     ) {}
 }

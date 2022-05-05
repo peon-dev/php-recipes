@@ -2,15 +2,38 @@
 <?php
 declare(strict_types=1);
 
+use Peon\PhpRecipes\Recipe;
+use Peon\PhpRecipes\Rector\Rector;
+use Peon\PhpRecipes\RunRecipe;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 require_once __DIR__ . '/../vendor/autoload_runtime.php';
 
 return static function (Command $command) {
+    $command->addArgument('recipeName', InputArgument::REQUIRED);
+
     $command->setCode(function (InputInterface $input, OutputInterface $output) {
-        $output->write('Hello World');
+        $recipe = Recipe::tryFrom($input->getArgument('recipeName'));
+
+        if ($recipe === null) {
+            $output->writeln('<error>Invalid recipe name provided, allowed recipes are:</error>');
+
+            foreach (Recipe::cases() as $value) {
+                $output->writeln($value->value);
+            }
+
+            exit(1);
+        }
+
+        $rector = new Rector();
+        $runRecipe = new RunRecipe($rector);
+
+        $applicationDirectory = (string) getcwd();
+
+        $runRecipe->run($recipe->value, $applicationDirectory, ['src']);
     });
 
     return $command;
