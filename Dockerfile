@@ -11,7 +11,15 @@ RUN mkdir /.composer \
     && chown 1000:1000 /.composer
 
 RUN apt-get update && apt-get install -y \
-    git
+    git \
+    # gearman dependencies:
+    libgearman \
+    libevent \
+    uuid
+
+# Not available via docker-php-extension-installer yet
+# see https://github.com/mlocati/docker-php-extension-installer/issues/495
+RUN pecl install gearman
 
 RUN install-php-extensions \
     amqp \
@@ -111,8 +119,6 @@ RUN install-php-extensions \
     zip \
     zookeeper \
     zstd
-
-RUN pecl install gearman
 
 USER 1000:1000
 
