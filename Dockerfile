@@ -13,7 +13,7 @@ RUN mkdir /.composer \
 RUN apt-get update && apt-get install -y \
     git \
     # gearman dependencies:
-    libgearman \
+    libgearman-dev \
     libevent-dev \
     uuid
 
