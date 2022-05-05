@@ -112,6 +112,8 @@ RUN install-php-extensions \
     zookeeper \
     zstd
 
+RUN pecl install gearman
+
 USER 1000:1000
 
 
