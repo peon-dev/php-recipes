@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     git \
     # gearman dependencies:
     libgearman \
-    libevent \
+    libevent-dev \
     uuid
 
 # Not available via docker-php-extension-installer yet
