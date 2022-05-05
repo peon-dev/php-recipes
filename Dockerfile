@@ -11,15 +11,106 @@ RUN mkdir /.composer \
     && chown 1000:1000 /.composer
 
 RUN apt-get update && apt-get install -y \
-    git \
-    zip
+    git
 
 RUN install-php-extensions \
+    amqp \
+    apcu \
+    ast \
+    bcmath \
+    blackfire \
+    bz2 \
+    calendar \
+    csv \
+    dba \
+    decimal \
+    ds \
+    enchant \
+    ev \
+    event \
+    excimer \
+    exif \
+    ffi \
+    gd \
+    geospatial \
+    gettext \
+    gmagick \
+    gmp \
+    gnupg \
+    grpc \
+    http \
+    igbinary \
+    imagick \
+    imap \
+    inotify \
     intl \
+    json_post \
+    ldap \
+    luasandbox \
+    lzf \
+    mailparse \
+    maxminddb \
+    mcrypt \
+    memcache \
+    memcached \
+    memprof \
+    mongodb \
+    msgpack \
+    mssql \
+    mysqli \
+    oauth \
+    oci8 \
+    odbc \
+    opcache \
+    opencensus \
+    openswoole \
+    parle \
+    pcntl \
+    pcov \
+    pdo_firebird \
+    pdo_mysql \
+    pdo_oci \
+    pdo_odbc \
+    pdo_pgsql \
+    pdo_sqlsrv \
+    pgsql \
+    pspell \
+    raphf \
+    rdkafka \
+    redis \
+    seaslog \
+    shmop \
+    smbclient \
+    snmp \
+    snuffleupagus \
+    soap \
+    sockets \
+    spx \
+    sqlsrv \
+    ssh2 \
+    swoole \
+    sysvmsg \
+    sysvsem \
+    sysvshm \
+    tidy \
+    timezonedb \
+    uopz \
+    uploadprogress \
+    uuid \
+    vips \
+    xdebug \
+    xhprof \
+    xlswriter \
+    xmldiff \
+    xmlrpc \
+    xsl \
+    yac \
+    yaml \
+    yar \
+    zephir_parser \
     zip \
-    xdebug
-
-COPY .docker/php/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    zookeeper \
+    zstd
 
 USER 1000:1000
 
@@ -31,16 +122,13 @@ ENV APP_DEBUG=0
 
 USER root
 
-# Unload xdebug extension by deleting config
-RUN rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-
-RUN mkdir -p /peon/var/cache && chown -R 1000:1000 /peon
+RUN mkdir /peon && chown -R 1000:1000 /peon
 
 USER 1000:1000
 WORKDIR /peon
 
 # Intentionally split into multiple steps to leverage docker layer caching
-COPY --chown=1000:1000 composer.json composer.lock symfony.lock ./
+COPY --chown=1000:1000 composer.json composer.lock ./
 
 RUN composer install --no-interaction --no-scripts
 
