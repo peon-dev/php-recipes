@@ -68,7 +68,6 @@ RUN install-php-extensions \
     oci8 \
     odbc \
     opcache \
-    opencensus \
     openswoole \
     parle \
     pcntl \
