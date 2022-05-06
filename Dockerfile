@@ -63,7 +63,6 @@ RUN install-php-extensions \
     memprof \
     mongodb \
     msgpack \
-    mssql \
     mysqli \
     oauth \
     oci8 \
