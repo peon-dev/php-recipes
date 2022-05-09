@@ -97,7 +97,6 @@ RUN install-php-extensions \
     sysvshm \
     tidy \
     timezonedb \
-    uopz \
     uploadprogress \
     uuid \
     vips \
