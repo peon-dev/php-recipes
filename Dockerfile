@@ -87,7 +87,6 @@ RUN install-php-extensions \
     shmop \
     smbclient \
     snmp \
-    snuffleupagus \
     soap \
     sockets \
     spx \
