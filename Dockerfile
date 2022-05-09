@@ -92,7 +92,6 @@ RUN install-php-extensions \
     spx \
     sqlsrv \
     ssh2 \
-    swoole \
     sysvmsg \
     sysvsem \
     sysvshm \
