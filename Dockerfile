@@ -1,4 +1,4 @@
-FROM ghcr.io/peon-dev/php-recipes:main
+FROM ghcr.io/peon-dev/php:recipes-main
 
 ENV APP_ENV="prod"
 ENV APP_DEBUG=0
