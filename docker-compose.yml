@@ -1,7 +1,7 @@
 version: "3.7"
 services:
     php:
-        image: peon
+        image: ghcr.io/peon-dev/php-recipes:main
         volumes:
             - .:/peon
         working_dir: /peon
@@ -10,10 +10,7 @@ services:
 
     # Helper service to keep composer depencencies up to date
     composer:
-        image: peon
-        build:
-            context: .
-            target: dev
+        image: ghcr.io/peon-dev/php-recipes:main
         volumes:
             - .:/peon
         working_dir: /peon
