@@ -1,0 +1,16 @@
+<expectations>
+    <expectation>
+        <command>git status --short</command>
+        <output> M src/VoidReturnTestDummy.php</output>
+    </expectation>
+
+    <expectation>
+        <command>git diff  --unified=0 | grep -v 'index '</command>
+        <output>diff --git a/src/VoidReturnTestDummy.php b/src/VoidReturnTestDummy.php
+--- a/src/VoidReturnTestDummy.php
++++ b/src/VoidReturnTestDummy.php
+@@ -9 +9 @@ final class VoidReturnTestDummy
+-    public function doNothing()
++    public function doNothing(): void</output>
+    </expectation>
+</expectations>

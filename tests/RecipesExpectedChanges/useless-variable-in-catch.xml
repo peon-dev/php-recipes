@@ -1,0 +1,16 @@
+<expectations>
+    <expectation>
+        <command>git status --short</command>
+        <output> M src/UselessVariableInCatchTestDummy.php</output>
+    </expectation>
+
+    <expectation>
+        <command>git diff  --unified=0 | grep -v 'index '</command>
+        <output>diff --git a/src/UselessVariableInCatchTestDummy.php b/src/UselessVariableInCatchTestDummy.php
+--- a/src/UselessVariableInCatchTestDummy.php
++++ b/src/UselessVariableInCatchTestDummy.php
+@@ -13 +13 @@ final class UselessVariableInCatchTestDummy
+-        } catch (\Throwable $throwable) {
++        } catch (\Throwable) {</output>
+    </expectation>
+</expectations>
