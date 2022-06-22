@@ -10,7 +10,7 @@ use Peon\PhpRecipes\RunRecipe;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
-class RunJobRecipeIntegrationTest extends TestCase
+class RunRecipeTest extends TestCase
 {
     /**
      * @dataProvider provideRecipeNames
