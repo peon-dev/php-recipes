@@ -1,10 +1,8 @@
 <?php
 
+use Rector\Config\RectorConfig;
 use Rector\Php80\Rector\FuncCall\ClassOnObjectRector;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-
-    $services->set(ClassOnObjectRector::class);
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->rule(ClassOnObjectRector::class);
 };

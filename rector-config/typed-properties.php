@@ -1,10 +1,8 @@
 <?php
 
+use Rector\Config\RectorConfig;
 use Rector\Php74\Rector\Property\TypedPropertyRector;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-
-    $services->set(TypedPropertyRector::class);
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->rule(TypedPropertyRector::class);
 };
