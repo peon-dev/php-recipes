@@ -22,7 +22,7 @@ final class RunRecipe
     {
         $configuration = new RectorProcessCommandConfiguration(
             $paths,
-            config: __DIR__ . '/../rector-config/' . $recipe . '.php',
+            config: __DIR__ . '/Recipe/Config/' . $recipe . '.php',
         );
 
         $command = $this->rector->getProcessCommand($configuration);

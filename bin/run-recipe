@@ -2,7 +2,7 @@
 <?php
 declare(strict_types=1);
 
-use Peon\PhpRecipes\Recipe;
+use Peon\PhpRecipes\Recipe\Recipe;
 use Peon\PhpRecipes\Rector\Rector;
 use Peon\PhpRecipes\RunRecipe;
 use Symfony\Component\Console\Command\Command;

@@ -21,3 +21,10 @@ services:
         volumes:
           - ./.docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 ```
+
+## Adding new recipes
+
+1. Add recipe into `Peon\PhpRecipes\Recipe\Recipe` enum (`src/Recipe.php`)
+2. Write config for that recipe (`src/Recipe/Config/<recipe-name>.php`)
+3. Write test expectation xml (`tests/RecipesExpectedChanges/<recipe-name>.xml`)
+    <small>You might need to prepare some code for it in example application (`tests/ExampleApplication`)</small>

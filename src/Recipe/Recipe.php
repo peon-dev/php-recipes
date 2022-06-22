@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Peon\PhpRecipes;
+namespace Peon\PhpRecipes\Recipe;
 
 enum Recipe: string
 {

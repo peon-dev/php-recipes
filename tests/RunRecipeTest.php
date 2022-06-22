@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Peon\PhpRecipes\Tests;
 
 use Nette\Utils\FileSystem;
-use Peon\PhpRecipes\Recipe;
+use Peon\PhpRecipes\Recipe\Recipe;
 use Peon\PhpRecipes\Rector\Rector;
 use Peon\PhpRecipes\RunRecipe;
 use PHPUnit\Framework\TestCase;
@@ -39,7 +39,7 @@ class RunRecipeTest extends TestCase
 
 
     /**
-     * @return \Generator<array{Recipe}>
+     * @return \Generator<array{\Peon\PhpRecipes\Recipe\Recipe}>
      */
     public function provideRecipeNames(): \Generator
     {
