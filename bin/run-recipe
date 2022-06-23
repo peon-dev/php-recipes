@@ -14,9 +14,12 @@ require_once __DIR__ . '/../vendor/autoload_runtime.php';
 
 return static function (Command $command) {
     $command->addArgument('recipeName', InputArgument::REQUIRED);
+    $command->addArgument('paths', InputArgument::REQUIRED | InputArgument::IS_ARRAY);
 
     $command->setCode(function (InputInterface $input, OutputInterface $output) {
-        $recipe = Recipe::tryFrom($input->getArgument('recipeName'));
+        $recipeNameArgumentValue = $input->getArgument('recipeName');
+        assert(is_string($recipeNameArgumentValue));
+        $recipe = Recipe::tryFrom($recipeNameArgumentValue);
 
         if ($recipe === null) {
             $output->writeln('<error>Invalid recipe name provided, allowed recipes are:</error>');
@@ -33,7 +36,10 @@ return static function (Command $command) {
 
         $applicationDirectory = (string) getcwd();
 
-        $runRecipe->run($recipe->value, $applicationDirectory, ['src']);
+        $pathsArgumentValue = $input->getArgument('paths');
+        assert(is_array($pathsArgumentValue) && count($pathsArgumentValue) > 0);
+
+        $runRecipe->run($recipe->value, $applicationDirectory, $pathsArgumentValue);
     });
 
     return $command;
