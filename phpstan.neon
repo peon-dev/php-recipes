@@ -6,8 +6,8 @@ parameters:
     level: max
     paths:
         - src
-        - bin
         - tests
+        - bin/run-recipe
     checkUninitializedProperties: true
     excludePaths:
         - tests/ExampleApplication/
