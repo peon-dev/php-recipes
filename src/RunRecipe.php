@@ -18,7 +18,7 @@ final class RunRecipe
     /**
      * @param non-empty-array<string> $paths
      */
-    public function run(string $recipe, string $applicationDirectory, array $paths): void
+    public function run(string $recipe, string $applicationDirectory, array $paths, null|float $timeoutInSeconds): void
     {
         $configuration = new RectorProcessCommandConfiguration(
             $paths,
@@ -27,7 +27,7 @@ final class RunRecipe
 
         $command = $this->rector->getProcessCommand($configuration);
 
-        $process = Process::fromShellCommandline($command, $applicationDirectory);
+        $process = Process::fromShellCommandline($command, $applicationDirectory, timeout: $timeoutInSeconds);
 
         $process->run(function ($type, $buffer) {
             echo $buffer;

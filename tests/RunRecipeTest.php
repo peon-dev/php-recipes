@@ -24,7 +24,7 @@ class RunRecipeTest extends TestCase
             new Rector(),
         );
 
-        $runRecipe->run($recipe->value, $testingApplication->directory, ['src']);
+        $runRecipe->run($recipe->value, $testingApplication->directory, ['src'], 10);
 
         $expectationFileContent = FileSystem::read(__DIR__ . '/RecipesExpectedChanges/' . $recipe->value . '.xml');
 
