@@ -12,18 +12,18 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.1.0",
-        "nette/utils": "^3.2",
-        "rector/rector": "^0.13.6",
-        "symfony/console": "^6.1",
-        "symfony/process": "^6.1",
-        "symfony/runtime": "^6.1"
+        "rector/rector": "^0.15.16",
+        "symfony/console": "^6.2",
+        "symfony/process": "^6.2",
+        "symfony/runtime": "^6.2"
     },
     "require-dev": {
         "ext-simplexml": "*",
-        "phpstan/phpstan": "^1.2",
+        "nette/utils": "^4.0",
+        "phpstan/phpstan": "^1.9",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpstan/phpstan-symfony": "^1.0",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.0",
         "roave/security-advisories": "dev-latest"
     },
     "autoload": {
@@ -42,7 +42,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "6.1.*"
+            "require": "6.2.*"
         }
     },
     "scripts": {
