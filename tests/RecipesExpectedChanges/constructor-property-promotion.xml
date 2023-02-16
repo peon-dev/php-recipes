@@ -9,26 +9,27 @@
         <output>diff --git a/src/ConstructorPromotedPropertiesTestDummy.php b/src/ConstructorPromotedPropertiesTestDummy.php
 --- a/src/ConstructorPromotedPropertiesTestDummy.php
 +++ b/src/ConstructorPromotedPropertiesTestDummy.php
-@@ -9,18 +9,2 @@ class ConstructorPromotedPropertiesTestDummy
+@@ -9,2 +8,0 @@ class ConstructorPromotedPropertiesTestDummy
 -    private $a;
 -    protected $b;
--    public $c;
+@@ -12,2 +9,0 @@ class ConstructorPromotedPropertiesTestDummy
 -    public array $d = [];
 -    public null|array $e;
--
--    public function __construct(
+@@ -16,2 +12,2 @@ class ConstructorPromotedPropertiesTestDummy
 -        string $a,
 -        $b,
--        bool $c,
++        private string $a,
++        protected $b,
+@@ -19,2 +15,2 @@ class ConstructorPromotedPropertiesTestDummy
 -        array $d,
 -        null|array $e = [],
--    ) {
++        public array $d,
++        public ?array $e = [],
+@@ -22,2 +17,0 @@ class ConstructorPromotedPropertiesTestDummy
 -        $this->a = $a;
 -        $this->b = $b;
--        $this->c = $c;
+@@ -25,2 +18,0 @@ class ConstructorPromotedPropertiesTestDummy
 -        $this->d = $d;
--        $this->e = $e;
-+    public function __construct(private string $a, protected $b, public bool $c, public array $d, public ?array $e = [])
-+    {</output>
+-        $this->e = $e;</output>
     </expectation>
 </expectations>
