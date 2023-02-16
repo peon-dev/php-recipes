@@ -25,7 +25,7 @@ class RectorTest extends TestCase
     /**
      * @return \Generator<array{RectorProcessCommandConfiguration, string}>
      */
-    public function provideTestGetProcessCommand(): \Generator
+    public static function provideTestGetProcessCommand(): \Generator
     {
         yield [
             new RectorProcessCommandConfiguration(['src']),

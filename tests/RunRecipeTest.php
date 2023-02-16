@@ -41,7 +41,7 @@ class RunRecipeTest extends TestCase
     /**
      * @return \Generator<array{\Peon\PhpRecipes\Recipe\Recipe}>
      */
-    public function provideRecipeNames(): \Generator
+    public static function provideRecipeNames(): \Generator
     {
         foreach (Recipe::cases() as $recipeName) {
             yield [
