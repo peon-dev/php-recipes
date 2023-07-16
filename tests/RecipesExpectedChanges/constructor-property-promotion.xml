@@ -24,7 +24,7 @@
 -        array $d,
 -        null|array $e = [],
 +        public array $d,
-+        public ?array $e = [],
++        public null|array $e = [],
 @@ -22,2 +17,0 @@ class ConstructorPromotedPropertiesTestDummy
 -        $this->a = $a;
 -        $this->b = $b;

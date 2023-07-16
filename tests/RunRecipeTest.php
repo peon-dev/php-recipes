@@ -44,7 +44,7 @@ class RunRecipeTest extends TestCase
     public static function provideRecipeNames(): \Generator
     {
         foreach (Recipe::cases() as $recipeName) {
-            yield [
+            yield $recipeName->value => [
                 $recipeName
             ];
         }
