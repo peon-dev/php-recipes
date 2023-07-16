@@ -11,16 +11,16 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.1.0",
-        "rector/rector": "^0.15.16",
-        "symfony/console": "^6.2",
-        "symfony/process": "^6.2",
-        "symfony/runtime": "^6.2"
+        "php": ">=8.2.0",
+        "rector/rector": "^0.17.6",
+        "symfony/console": "^6.3",
+        "symfony/process": "^6.3",
+        "symfony/runtime": "^6.3"
     },
     "require-dev": {
         "ext-simplexml": "*",
         "nette/utils": "^4.0",
-        "phpstan/phpstan": "^1.9",
+        "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpstan/phpstan-symfony": "^1.0",
         "phpunit/phpunit": "^10.0",
@@ -42,7 +42,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "6.2.*"
+            "require": "6.3.*"
         }
     },
     "scripts": {
